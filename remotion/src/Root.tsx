@@ -4,6 +4,7 @@ import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 import { loadFont as loadSpaceGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
 import { loadFont as loadJetBrainsMono } from "@remotion/google-fonts/JetBrainsMono";
 import { ExplainerVideo } from "./scenes/ExplainerVideo";
+import { NefariousScene, NEFARIOUS_TOTAL_FRAMES } from "./scenes/NefariousScene";
 import { StoryboardPlayer } from "./scenes/StoryboardPlayer";
 import { ThreeDemo } from "./ThreeDemo";
 import { ShortsPlayer } from "./shorts/ShortsPlayer";
@@ -71,6 +72,19 @@ const defaultStoryboard: Storyboard = {
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* ===== Cinematic Scene ===== */}
+
+      {/* Two-act stylized motion-graphics sequence:
+          Act 1 "Enhanced Visual Impacts" + Act 2 "The Final Power Stance" */}
+      <Composition
+        id="NefariousScene"
+        component={NefariousScene}
+        durationInFrames={NEFARIOUS_TOTAL_FRAMES}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
       {/* ===== Data-Driven Video Player ===== */}
 
       {/* Scene Storyboard Player - dynamically loads project's storyboard.json */}
